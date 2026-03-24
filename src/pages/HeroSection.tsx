@@ -156,23 +156,29 @@ const HeroSection = () => {
               </a>
             ))}
           </div>
-
+          
           {/* Download Resume */}
           <div className="flex justify-center mt-20">
-            <button
-              className="group flex items-center gap-3 border border-[#ff715a]
-              px-6 py-3 rounded-full bg-transparent
-              text-[#ff715a] font-medium
-              hover:scale-105 transition hover:shadow-[0_0_20px_#ff715a]"
+            <a
+              href="https://drive.google.com/file/d/1rs6l1eZan4-FHuVFv39lix8JI_YC76D3/view?usp=sharing"
+              target="_blank"  
+              rel="noopener noreferrer"
             >
-              {t("DownloadResume")}
+              <button
+                className="group flex items-center gap-3 border border-[#ff715a]
+                px-6 py-3 rounded-full bg-transparent
+                text-[#ff715a] font-medium
+                hover:scale-105 transition hover:shadow-[0_0_20px_#ff715a]"
+              >
+                {t("DownloadResume")}
 
-              <FaDownload
-                className="transition-transform duration-300
-                group-hover:animate-bounce"
-                size={18}
-              />
-            </button>
+                <FaDownload
+                  className="transition-transform duration-300
+                  group-hover:animate-bounce"
+                  size={18}
+                />
+              </button>
+            </a>
           </div>
         </div>
 
