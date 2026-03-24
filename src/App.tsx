@@ -1,14 +1,16 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css'
+import HeroSection from './pages/HeroSection';
 
 function App() {
 
  return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind Ready 🚀
-      </h1>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="bg-[#121f26] ">
+        <HeroSection />
+      </div>
+
+    </BrowserRouter>  );
 }
 
 export default App
