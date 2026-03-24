@@ -40,12 +40,6 @@ const HeroSection = () => {
   const leftIcon = i18n.language === "ar" ? ">" : "<";
   const rightIcon = i18n.language === "ar" ? "<" : ">";
 
-  // const toggleLanguage = () => {
-  //   const newLang = i18n.language === "ar" ? "en" : "ar";
-  //   i18n.changeLanguage(newLang);
-  //   document.body.dir = newLang === "ar" ? "rtl" : "ltr";
-  //   localStorage.setItem("appLanguage", newLang);
-  // };
 
   const routesData = [
     { path: "/about", element: <About />, key: "about" },
@@ -60,13 +54,12 @@ const HeroSection = () => {
   const pathKey =
     routesData.find((r) => r.path === location.pathname)?.key || "about";
 
-  // تأجيل التحديث لتجنب render متكرر
-  const updateState = () => {
-    setActive(pathKey);
-    localStorage.setItem("activeRoute", pathKey);
+    const updateState = () => {
+      setActive(pathKey);
+      localStorage.setItem("activeRoute", pathKey);
 
-    setAnimateTitle(false);
-    setTimeout(() => setAnimateTitle(true), 50);
+      setAnimateTitle(false);
+      setTimeout(() => setAnimateTitle(true), 50);
   };
 
   updateState();
@@ -111,49 +104,50 @@ const HeroSection = () => {
 
       <section
         id="hero"
-        className="relative flex flex-col lg:flex-row items-center justify-between px-6 lg:px-36 gap-10 min-h-screen pt-20 overflow-hidden animate-slideInLeft"
+        className="relative flex flex-col lg:flex-row items-center lg:justify-between
+        px-6 sm:px-10 md:px-16 lg:px-28 xl:px-36
+        gap-32 min-h-screen pt-24 overflow-hidden"
       >
-        <div className="text-center lg:text-left max-w-lg space-y-6">
-          <h1 className="text-4xl lg:text-6xl font-extrabold text-white">
+        {/* LEFT SIDE */}
+        <div className="text-center lg:text-left max-w-xl space-y-8">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white lg:ms-24">
             {t("Hello")}
-            <span className=" mx-2 text-[#ff715a]">.</span>
+            <span className="mx-2 text-[#ff715a]">.</span>
           </h1>
 
-          <div className="flex items-center justify-start gap-3 -ml-40">
-            <span className="border-b-2 border-[#ff715a] w-[200px] block"></span>
-            <span className="text-4xl lg:text-6xl text-white">
+          {/* Name */}
+          <div className="flex items-center justify-center lg:justify-start gap-3">
+            <span className="border-b-2 border-[#ff715a] w-16 sm:w-24 md:w-32 lg:w-48 block"></span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl text-white">
               {t("Yasmeen")}
             </span>
           </div>
 
-          <p className="text-4xl lg:text-6xl text-white font-extrabold flex whitespace-nowrap">
+          <p className="text-4xl lg:text-6xl text-white font-extrabold flex whitespace-nowrap lg:ms-24">
             {t("FrontEndDeveloper")}
           </p>
 
-          <div className="flex justify-center items-center gap-6 py-10">
+          {/* Contact Icons */}
+          <div className="flex justify-center lg:justify-center items-center gap-4 sm:gap-6 pt-6 flex-wrap">
             {contacts.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`
-                  group flex items-center
-                  bg-[#1e3644]
-                  text-[#ff8c78]
-                  rounded-full
-                  overflow-hidden
-                  transition-all duration-500
-                  w-14 hover:w-44
-                  h-14
-                  border border-[#2c3e47]
-                  ${item.color}
-                `}
+                className="group flex items-center
+                bg-[#1e3644] text-[#ff8c78]
+                rounded-full overflow-hidden
+                transition-all duration-500
+                w-12 sm:w-14 hover:w-40 sm:hover:w-44
+                h-12 sm:h-14
+                border border-[#2c3e47]"
               >
-                <div className="flex items-center justify-center w-14 h-14 shrink-0">
-                  {item.icon({ className: "text-xl" })}
+                <div className="flex items-center justify-center w-12 sm:w-14 h-12 sm:h-14 shrink-0">
+                  {item.icon({ className: "text-lg sm:text-xl" })}
                 </div>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pr-5 font-medium">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pr-5 font-medium text-sm sm:text-base">
                   {item.label}
                 </span>
               </a>
@@ -161,16 +155,36 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] flex items-center justify-start mx-0 lg:mx-20 fadeInImage">
-          <div
-            className="absolute inset-0 rounded-full border-[30px] border-[#ff715a] shadow-lg"
-            style={{
-              boxShadow: "0 0 400px #653a39, inset 0 0 100px #6e3f3f",
-            }}
-          ></div>
+       {/* RIGHT SIDE IMAGE */}
+        <div className="relative
+          w-[260px] h-[260px]
+          sm:w-[340px] sm:h-[340px]
+          md:w-[420px] md:h-[420px]
+          lg:w-[520px] lg:h-[520px]
+          xl:w-[500px] xl:h-[500px]
+          flex items-center justify-center">
 
+          {/* Circle Border */}
           <div
-            className="absolute text-[100px] -top-24 -left-10 lg:-top-20 lg:-left-32 lg:text-[150px] font-bold"
+            className="absolute inset-0 rounded-full border-[18px] sm:border-[22px] lg:border-[30px] border-[#ff715a] z-20 pointer-events-none"
+            style={{
+              boxShadow: "0 0 200px #653a39, inset 0 0 80px #6e3f3f",
+            }}
+          />
+
+          {/* Image Mask */}
+          <div className="absolute inset-0 rounded-full overflow-hidden z-10 bg-[#1e3644]">
+            <img
+              src={heroImage}
+              alt="Yasmeen Refay"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Left Icon */}
+          <div
+            className="absolute text-[60px] sm:text-[80px] lg:text-[120px]
+            -top-10 -left-6 sm:-top-14 sm:-left-10 lg:-top-16 lg:-left-20 font-bold"
             style={{
               color: "#000000",
               WebkitTextStroke: "1px #ff715a",
@@ -180,8 +194,10 @@ const HeroSection = () => {
             {leftIcon}
           </div>
 
+          {/* Right Icon */}
           <div
-            className="absolute -bottom-10 -right-12 text-[100px] lg:-bottom-10 lg:-right-32 lg:text-[150px] font-bold"
+            className="absolute text-[60px] sm:text-[80px] lg:text-[120px]
+            -bottom-8 -right-6 sm:-bottom-12 sm:-right-10 lg:-bottom-14 lg:-right-20 font-bold"
             style={{
               color: "#000000",
               WebkitTextStroke: "1px #ff715a",
@@ -190,16 +206,9 @@ const HeroSection = () => {
           >
             {rightIcon}
           </div>
-
-          <div className="absolute z-10 left-1/2 lg:-bottom-20 -translate-x-1/2 overflow-visible flex items-end justify-center drop-shadow-[0_0_30px_#653a39]">
-            <img
-              src={heroImage}
-              alt="Yasmeen Refay"
-              className="w-full h-[300px] lg:h-[600px] object-cover"
-            />
-          </div>
         </div>
       </section>
+
 
       <Navbar setAnimateTitle={setAnimateTitle} />
 
