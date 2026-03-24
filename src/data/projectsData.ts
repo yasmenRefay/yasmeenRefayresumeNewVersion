@@ -35,7 +35,7 @@ export const projects: Project[] = [
       techStack: {
         frontend: ["React", "TypeScript", "Bootstrap 5"],
         state: ["Redux"],
-        api: ["Axios", "REST APIs"],
+        api: ["REST APIs"],
         versionControl: ["Git"],
       },
 
@@ -84,14 +84,13 @@ export const projects: Project[] = [
         "QuizzesCreation",
         "LearnerPages",
         "AuthenticationSystem",
-        "AuthenticationSystem",
+        "SeamlessIntegration",
         "HighCode",
       ],
 
       achievements: [
         "BuiltFull",
         "IntegratedState",
-        "Ensured",
         "CollaboratedEffectively",
         "DeliveredResponsive",
       ],
@@ -120,7 +119,7 @@ export const projects: Project[] = [
               backend: ["Glide API", "Script Includes", "Business Rules"],
               automation: ["Flow Designer", "Workflow Automation"],
               integrations: ["REST APIs", "External Systems Integration"],
-              tools: ["Git", "Jira", "VS Code"],
+              tools: ["VS Code"],
           },
 
           keyFeatures: [
@@ -219,12 +218,10 @@ export const projects: Project[] = [
               "FreshMarketFeature7",
               "FreshMarketFeature8",
               "FreshMarketFeature9",
-              "FreshMarketFeature10",
               
           ],
 
           achievements: [
-              "FreshMarketAchievement1",
               "FreshMarketAchievement2",
               "FreshMarketAchievement3",
               "FreshMarketAchievement4",
@@ -261,7 +258,6 @@ export const projects: Project[] = [
         ],
 
         achievements: [
-          "MyPortfolioAchievement1",
           "MyPortfolioAchievement2",
           "MyPortfolioAchievement3",
           "MyPortfolioAchievement4",
@@ -326,6 +322,8 @@ export const projects: Project[] = [
       techStack: {
         frontend: ["HTML5", "CSS3", "Bootstrap5", "JavaScript", "jQuery"],
         ui: ["API Integration", "Dynamic Modals", "Search System", "Input Validation"],
+        api: ["REST APIs"],
+
       },
 
       keyFeatures: [
@@ -591,14 +589,14 @@ export const projects: Project[] = [
 
   {
     title: "Sapetrol Mobile Application",
-    shortDesc: "SapetrolDesc",
+    shortDesc: "SapetrolOverView",
     icon: FaCode,
     img: sapetrolImg,
     technologies: ["Ionic", "React", "TypeScript"],
 
     details: {
       overview:
-        "SapetrolOverView"  ,
+        "SapetrolDesc"  ,
       techStack: {
         frontend: ["Ionic React", "TypeScript"],
         backend: ["API Integration"],
@@ -613,7 +611,6 @@ export const projects: Project[] = [
         "SapetrolFeature5",
         "SapetrolFeature6",
         "SapetrolFeature7",
-        "SapetrolFeature8",
       
       ],
 
