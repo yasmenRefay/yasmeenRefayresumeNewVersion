@@ -14,6 +14,7 @@ import {
   FaGithub,
   FaEnvelope,
   FaWhatsapp,
+  FaDownload,
 } from "react-icons/fa";
 import Projects from "./Projects";
 import { useTranslation } from "react-i18next";
@@ -136,13 +137,15 @@ const HeroSection = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center
-                bg-[#1e3644] text-[#ff8c78]
-                rounded-full overflow-hidden
-                transition-all duration-500
-                w-12 sm:w-14 hover:w-40 sm:hover:w-44
-                h-12 sm:h-14
-                border border-[#2c3e47]"
+                 className={`group flex items-center
+                    bg-[#1e3644] text-[#ff8c78]
+                    rounded-full overflow-hidden
+                    transition-all duration-500
+                    w-12 sm:w-14 hover:w-40 sm:hover:w-44
+                    h-12 sm:h-14
+                    border border-[#2c3e47]
+                    ${item.color}
+                  `}
               >
                 <div className="flex items-center justify-center w-12 sm:w-14 h-12 sm:h-14 shrink-0">
                   {item.icon({ className: "text-lg sm:text-xl" })}
@@ -152,6 +155,24 @@ const HeroSection = () => {
                 </span>
               </a>
             ))}
+          </div>
+
+          {/* Download Resume */}
+          <div className="flex justify-center mt-20">
+            <button
+              className="group flex items-center gap-3 border border-[#ff715a]
+              px-6 py-3 rounded-full bg-transparent
+              text-[#ff715a] font-medium
+              hover:scale-105 transition hover:shadow-[0_0_20px_#ff715a]"
+            >
+              {t("DownloadResume")}
+
+              <FaDownload
+                className="transition-transform duration-300
+                group-hover:animate-bounce"
+                size={18}
+              />
+            </button>
           </div>
         </div>
 
