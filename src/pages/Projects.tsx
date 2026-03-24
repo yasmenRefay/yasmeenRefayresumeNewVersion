@@ -187,7 +187,7 @@ function Projects() {
 
         {/* Project Selector */}
         <div className="flex flex-wrap justify-center gap-3 lg:mt-10">
-            {projects.map((p, i) => (
+            {projects.map((_p, i) => (
             <button
                 key={i}
                 onClick={() => {
