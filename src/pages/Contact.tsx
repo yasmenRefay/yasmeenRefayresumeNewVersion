@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { IconType } from "react-icons";
 import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";

@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import type { IconType } from "react-icons";
 import { FaCode, FaMobileAlt, FaPaintBrush, FaRocket , FaShoppingCart  } from "react-icons/fa";
