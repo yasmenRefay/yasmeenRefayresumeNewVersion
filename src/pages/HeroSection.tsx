@@ -184,12 +184,12 @@ const HeroSection = () => {
 
        {/* RIGHT SIDE IMAGE */}
         <div className="relative
-          w-[260px] h-[260px]
+          w-[300px] h-[300px]
           sm:w-[340px] sm:h-[340px]
           md:w-[420px] md:h-[420px]
           lg:w-[520px] lg:h-[520px]
           xl:w-[500px] xl:h-[500px]
-          flex items-center justify-center">
+          flex items-center justify-center lg:me-20 mb-10">
 
           {/* Circle Border */}
           <div
